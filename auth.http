@@ -1,0 +1,24 @@
+@url = http://localhost:3001/api
+@json = Content-Type: :application/json
+###
+get {{url}}
+
+### 所有用户
+get {{url}}/users
+
+### 注册(下面空行表示请求体，且要写严格的JSON格式键值都需要双")
+post {{url}}/register
+{{json}}
+
+{
+    "username":"cad",
+    "password":"cad"
+}
+
+### 登陆
+post {{url}}/login
+
+
+### 获取个人信息
+get {{url}}/userprofile
+Authorization: Bearer
